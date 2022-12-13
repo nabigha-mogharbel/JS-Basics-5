@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+             <input name="name" type="text" id='n' >
+             <button onclick="printName()">Enter</button>
+        <p id="output"></p>
+    <script>
+        let n = document.getElementById('n');
+        let p=document.getElementById('output');
+        function printName(){
+            console.log('hey')
+            p.innerText=`Hello ` + n.value;
+            }
+    </script>
+    </body>
+</html>
