@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+            <input name="nb" type="number" id='num' >
+            <button onclick="printNum()">Enter</button>
+        <p id="output"></p>
+    <script>
+        let n = document.getElementById('num');
+        let p=document.getElementById('output');
+        function printNum(){
+            let sum=0;
+            for(let i=0; i<=n.value; i++){
+                sum+=i
+            }
+            p.innerText=sum;
+        }
+    </script>
+    </body>
+</html>
