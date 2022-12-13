@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+            <p id="primes"></p>
+
+    <script>
+        for(let i=2; i<31; i++){
+            let bool=true;
+            for(let j=i-1; j>1; j--){
+                if(i%j===0){
+                    bool=false
+                }
+                
+            }
+            if(bool){
+                document.getElementById('primes').innerText+= ' ' + i;
+            }
+        }
+    </script>
+    </body>
+</html>
