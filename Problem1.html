@@ -4,15 +4,19 @@
 
     </head>
     <body>
-             <input name="name" type="text" id='n' >
-             <button onclick="printName()">Enter</button>
+            <input name="name" type="text" id='n' >
+            <button onclick="printName()">Enter</button>
         <p id="output"></p>
     <script>
         let n = document.getElementById('n');
         let p=document.getElementById('output');
         function printName(){
-            console.log('hey')
-            p.innerText=`Hello ` + n.value;
+            if(n.value==='Alice' || n.value==='Bob'){
+                p.innerText=`Hello ` + n.value;
+            }
+            else {
+                p.innerText='Hello stranger'
+            }
             }
     </script>
     </body>
