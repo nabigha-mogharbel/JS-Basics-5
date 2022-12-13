@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+            <input name="nb" type="number" id='num'>
+            <label for="plus">Plus</label>
+            <input type="radio" name="plus/multiply" id="plus" value="+">
+            <label for="multiply">Multiply</label>
+            <input type="radio" name="plus/multiply" id='multiply' value="*">
+            <button onclick="printNum()">Enter</button>
+        <p id="output"></p>
+    <script>
+        let n = document.getElementById('num');
+        let plus = document.getElementById('plus');
+        let multiply = document.getElementById('multiply');
+        let p=document.getElementById('output');
+        function printNum(){
+            let sum=0;
+            let pro=1;
+            if(plus.checked){
+               for(let i=0; i<=n.value; i++){
+                sum+=i;
+               }
+                p.innerText=sum;
+
+            }
+            else if(multiply.checked){
+                for(let i=1; i<=n.value; i++){
+                    pro=pro*i
+               }
+                p.innerText=pro;
+            }
+        }
+    </script>
+    </body>
+</html>
