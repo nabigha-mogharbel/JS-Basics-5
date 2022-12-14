@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p id="random"></p>
+    <input name="nb" type="number" id='num'>
+    <button id='enter' onclick="checkguesses()">Enter</button>
+    <p id="output"></p>
+    <script>
+        let randomDisp = document.getElementById('random');
+        let guess = document.getElementById('num');
+        let p = document.getElementById('output');
+        let trial;
+        let guesses = [];
+        generateNumber()
+        function generateNumber() {
+            trial = Math.floor(Math.random() * 100);
+            
+        }
+        function checkguesses() {
+             if (guesses.length < 8 && !guesses.includes(guess.value)) {
+                guesses.push(parseInt(guess.value));
+                compare(parseInt(guess.value))
+
+            }
+
+        }
+        function compare(n) {
+            console.log('second f')
+
+            if (n === trial) {
+                p.innerText = `correct! trial ${guesses.length} trials`
+                document.getElementById('enter').disabled = true;
+
+            }
+            else if (n > trial) {
+                p.innerText = `too large trial ${guesses.length} /8`
+                endgame()
+            }
+            else if (n < trial) {
+                p.innerText = `too small trial ${guesses.length} /8`
+                endgame()
+            }
+        }
+        function endgame(){
+            if (guesses.length === 8) {
+                randomDisp.innerText = `The number is ${trial}`;
+                document.getElementById('enter').disabled = true;
+                p.innerText = `you haven't guessed the number. refresh for a new one`
+            }
+        }
+    </script>
+</body>
+
+</html>
